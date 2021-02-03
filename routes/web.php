@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\inicio;
+use App\Http\Controllers\Editoriales;
+use App\Http\Controllers\Libros;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('principal');
-});
+Route::get('/', [inicio::class, 'index']); 
+
+Route::get('/libros/listado', [Libros::class, 'listado'])->name('listLibros'); 
+Route::get('/Editorial/listado', [Editoriales::class, 'index'])->name('listEditorial'); 
+Route::post('/Editorial/registrar', [Editoriales::class, 'formularioReg'])->name('fromregistrar'); 
+Route::post('/Editorial/registrar', [Editoriales::class, 'registrar'])->name('registrar'); 
+Route::post('/Editorial/actualizar/{id}', [Editoriales::class, 'formularioAct'])->name('from');
+Route::post('/Editorial/actualizar/{id}', [Editoriales::class, 'actualizar'])->name('actualizarEdit');
