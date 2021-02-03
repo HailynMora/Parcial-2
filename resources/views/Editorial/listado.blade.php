@@ -2,7 +2,8 @@
 @section('contenido')
     <h1> Editoriales </h1>
 <table class="table">
-<button type="button" class="btn btn-success" >Registrar</button>
+<a href="{{route('fromregistrar')}}" class="btn btn-primary" > Registrar</a>
+
     <thead>
         <tr>
             <th scope="col">#</th>

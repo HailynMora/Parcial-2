@@ -18,13 +18,17 @@
             <label for="ciudad">Ciudad </label>
             <input type="text" id="ciudad" name="ciudad"  class="form-control" placeholder="Ciudad" aria-label="Recipient's username" aria-describedby="basic-addon2">
         </div>
+        <div class="form-group">
+            <label for="telefono">Telefono </label>
+            <input type="text" id="telefono" name="telefono"  class="form-control" placeholder="Telefono" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        </div>
 
 
         <br> <br>
          <!-- Etiquetas de tipo button -->
         <button type="submit" class="btn btn-primary">Registrar</button>
         <button type="reset" class="btn btn-secondary">Limpiar</button>
-        <button type="button" class="btn btn-danger">Cancelar</button>
+        <a  href="{{ url()->previous() }}" class="btn btn-danger" > Cancelar</a>
     </form>
 
 @stop

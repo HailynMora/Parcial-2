@@ -20,7 +20,7 @@ Route::get('/', [inicio::class, 'index']);
 
 Route::get('/libros/listado', [Libros::class, 'listado'])->name('listLibros'); 
 Route::get('/Editorial/listado', [Editoriales::class, 'index'])->name('listEditorial'); 
-Route::post('/Editorial/registrar', [Editoriales::class, 'formularioReg'])->name('fromregistrar'); 
+Route::get('/Editorial/registrar', [Editoriales::class, 'formularioReg'])->name('fromregistrar'); 
 Route::post('/Editorial/registrar', [Editoriales::class, 'registrar'])->name('registrar'); 
-Route::post('/Editorial/actualizar/{id}', [Editoriales::class, 'formularioAct'])->name('from');
-Route::post('/Editorial/actualizar/{id}', [Editoriales::class, 'actualizar'])->name('actualizarEdit');
+Route::get('/Editorial/actualizar/{id}', [Editoriales::class, 'fromActu'])->name('from');
+Route::post('/Editorial/actualizar', [Editoriales::class, 'actualizar'])->name('actualizarEdit');

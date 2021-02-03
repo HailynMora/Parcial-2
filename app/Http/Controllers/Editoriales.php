@@ -15,7 +15,7 @@ class Editoriales extends Controller
     public function formularioReg()
     {
         $editorial = Editorial::all();
-        return view('Editorial.from_registro', compact('editorial'));
+        return view('Editorial.from_registro', ['editorial' => $editorial]);
     }
 
 
@@ -28,10 +28,10 @@ class Editoriales extends Controller
         $edt->ciudad = $request->input('ciudad');
         $edt->telefono = $request->input('telefono');
         $edt->save();
-        return redirect()->route('listado');
+        return redirect()->route('listEditorial');
     }
 
-    public function formularioAct($id){
+    public function fromActu($id){
         $editorial = Editorial::findOrFail($id);
         return view('Editorial.from_actualizar', compact('editorial'));
     }
@@ -45,7 +45,7 @@ class Editoriales extends Controller
         $edit->ciudad = $request->input('ciudad');
         $edit->telefono = $request->input('telefono');   
         $edit->save();
-        return redirect()->route('listado');
+        return redirect()->route('listEditorial');
     }
 
     public function eliminar($id){
