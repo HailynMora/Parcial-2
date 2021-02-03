@@ -16,7 +16,7 @@ use App\Http\Controllers\Libros;
 |
 */
 
-Route::get('/', [inicio::class, 'index']); 
+Route::get('/', [inicio::class, 'index'])->name('inicio'); 
 
 Route::get('/libros/listado', [Libros::class, 'listado'])->name('listLibros'); 
 Route::get('/Editorial/listado', [Editoriales::class, 'index'])->name('listEditorial'); 
