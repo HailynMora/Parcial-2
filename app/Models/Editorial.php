@@ -9,7 +9,7 @@ class Editorial extends Model
 {
     protected $table = 'editorial';
 
-   /* public function libro(){
+   public function libro(){
         return $this->hasMany(libros::class,'id');
-    }*/
+    }
 }

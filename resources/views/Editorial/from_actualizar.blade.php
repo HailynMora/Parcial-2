@@ -1,7 +1,6 @@
 @extends('principal')
 @section('contenido')
 <h1> Formulario de Actualizacion </h1>
-@foreach($editorial)
 <form action="{{route('actualizarEdit',$editorial->id)}}" method= "POST">
     @csrf
     <!-- Etiquetas de tipo text con un value asignado -->
@@ -24,12 +23,11 @@
         <label for="telefono">Telefono </label>
         <input type="text" id="telefono" name="telefono" value="{{$editorial->telefono}}" class="form-control" placeholder="Telefono" aria-label="Recipient's username" aria-describedby="basic-addon2">
     </div>
-@endforeach
     <br> <br>
      <!-- Etiquetas de tipo button -->
     <button type="submit" class="btn btn-primary">Actualizar</button>
     <button type="reset" class="btn btn-secondary">Limpiar</button>
-    <button type="button" class="btn btn-danger">Cancelar</button>
+    <a  href="{{ url()->previous() }}" class="btn btn-danger" > Cancelar</a>
 </form>
 
 

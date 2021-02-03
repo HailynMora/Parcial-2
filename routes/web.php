@@ -23,4 +23,4 @@ Route::get('/Editorial/listado', [Editoriales::class, 'index'])->name('listEdito
 Route::get('/Editorial/registrar', [Editoriales::class, 'formularioReg'])->name('fromregistrar'); 
 Route::post('/Editorial/registrar', [Editoriales::class, 'registrar'])->name('registrar'); 
 Route::get('/Editorial/actualizar/{id}', [Editoriales::class, 'fromActu'])->name('from');
-Route::post('/Editorial/actualizar', [Editoriales::class, 'actualizar'])->name('actualizarEdit');
+Route::post('/Editorial/actualizar/{id}', [Editoriales::class, 'actualizar'])->name('actualizarEdit');
